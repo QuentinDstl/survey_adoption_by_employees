@@ -1,1 +1,10 @@
 ﻿.vscode
+target
+.venv
+.env
+/x
+site
+__pycache__
+.idea
+token.txt
+dist
