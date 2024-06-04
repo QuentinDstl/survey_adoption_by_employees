@@ -1,7 +1,7 @@
 [project]
 name = "paris1-iae-ai-adoption-by-employees"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.4.0"
+description = "Data set and visualization for our research project at iae paris sorbonne "
 dependencies = [
     "numpy>=1.26.4",
     "pandas>=2.2.2",
