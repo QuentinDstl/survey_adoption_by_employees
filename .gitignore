@@ -8,3 +8,5 @@ __pycache__
 .idea
 token.txt
 dist
+raw/
+!raw/README.md
