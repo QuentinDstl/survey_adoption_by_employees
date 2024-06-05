@@ -115,6 +115,8 @@ seaborn==0.13.2
 six==1.16.0
     # via asttokens
     # via python-dateutil
+squarify==0.4.3
+    # via paris1-iae-ai-adoption-by-employees
 stack-data==0.6.3
     # via ipython
 tenacity==8.3.0
