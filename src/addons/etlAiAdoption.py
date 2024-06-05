@@ -66,6 +66,15 @@ def correctAiAdoption(df_survey: DataFrame) -> DataFrame:
         'Moyenement', 'Moyennement')
     df_survey['Tools'] = df_survey['Tools'].replace(
         ['non', 'NON', 'rien'], 'Aucun')
+    df_survey['Motivations'] = df_survey['Motivations'].replace(
+        ['aucune', 'aucun', 'Aucun', ' ', ''], 'Aucune motivation')
+    df_survey['Motivations'] = df_survey['Motivations'].replace(
+        ['Nous n\'utilisons passe l\'IA', 'Pas d\'IA au travail',
+            'je nen ai pas', 'N\'utilise pas l\'IA'],
+        'Pas d\'IA')
+    df_survey['Motivations'] = df_survey['Motivations'].replace(
+        'Focus pour les humains sur des tâches à forte valeur ajoutée',
+        'Suppression des  tâches laborieuses et répétitives')
 
 
 def remapAiAdoption(df_survey: DataFrame) -> DataFrame:
