@@ -1,19 +1,6 @@
 from pandas import read_csv, DataFrame
 from os import path
 
-# On veut une fonction qui récupère les raw data et qui appelle transform
-# pour les clean puis qui les save dans un csv dans data
-# Le clean doit appeler plusieurs fonctions :
-# - pour renommer les colonnes
-# - pour enlever les colonnes inutiles
-# - pour enlever les lignes inutiles
-# - pour rajouter des colonnes calculées
-# - pour enlever les doublons
-# - pour modifier les erreurs de saisie
-# - pour classifier des données
-
-# todo je crois que on passe les var par référence et donc pas besoin de return
-
 
 def extractTransformLoad(current_path: str) -> None:
     path_current_dir = path.dirname(current_path)
@@ -77,6 +64,8 @@ def correctAiAdoption(df_survey: DataFrame) -> DataFrame:
     # * Correct input errors
     df_survey['LossOfAutonomy'] = df_survey['LossOfAutonomy'].replace(
         'Moyenement', 'Moyennement')
+    df_survey['Tools'] = df_survey['Tools'].replace(
+        ['non', 'NON', 'rien'], 'Aucun')
 
 
 def remapAiAdoption(df_survey: DataFrame) -> DataFrame:
