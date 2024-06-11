@@ -1,4 +1,4 @@
-from pandas import read_csv, DataFrame
+from pandas import read_csv, DataFrame, to_numeric
 from os import path
 
 
@@ -64,6 +64,8 @@ def correctAiAdoption(df_survey: DataFrame) -> DataFrame:
     # * Correct input errors
     df_survey['LossOfAutonomy'] = df_survey['LossOfAutonomy'].replace(
         'Moyenement', 'Moyennement')
+    df_survey['LossOfAutonomy'] = df_survey['LossOfAutonomy'].replace(
+        'Partiellement', 'Moyennement')
     df_survey['Tools'] = df_survey['Tools'].replace(
         ['non', 'NON', 'rien'], 'Aucun')
     df_survey['Motivations'] = df_survey['Motivations'].replace(
@@ -185,6 +187,11 @@ def remapAiAdoption(df_survey: DataFrame) -> DataFrame:
     }
     df_survey['SupportDepartment'] = df_survey['_Department'].map(
         support_remapping)
+
+    df_survey['Trust'] = to_numeric(df_survey['Trust'], errors='coerce')
+    # Modifier les valeurs de 'Trust' de 1 à 5 en 0 à 4
+    df_survey['Trust'] = df_survey['Trust'].apply(
+        lambda x: x - 1 if x > 0 else x)
 
 
 def categorizeMultiChoiceQuestions(df_survey: DataFrame) -> DataFrame:
