@@ -11,7 +11,7 @@ This thesis examines resistance to change associated with the integration of art
 ## Data
 
 Pour ce faire, nous avons récolté les données à travers le sondage suivant (les réponses sont disponibles dans la section src/data) / To do this, we collected data through the following survey (the responses are available in the src/data section):
-https://docs.google.com/forms/d/e/1FAIpQLSe60rDu8m4UzGK_ZrwiSLB8b2RVClSHTxN6b-wp_JhhrNzi_w/viewform
+https://forms.gle/F6Dftsew5qZnBtKz9
 
 ---
 
