@@ -69,7 +69,7 @@ def correctAiAdoption(df_survey: DataFrame) -> DataFrame:
     df_survey['Tools'] = df_survey['Tools'].replace(
         ['non', 'NON', 'rien'], 'Aucun')
     df_survey['Motivations'] = df_survey['Motivations'].replace(
-        ['aucune', 'aucun', 'Aucun', ' ', ''], 'Aucune motivation')
+        ['aucune', 'Aucune', 'aucun', 'Aucun', ' ', ''], 'Aucune motivation')
     df_survey['Motivations'] = df_survey['Motivations'].replace(
         ['Nous n\'utilisons passe l\'IA', 'Pas d\'IA au travail',
             'je nen ai pas', 'N\'utilise pas l\'IA'],
